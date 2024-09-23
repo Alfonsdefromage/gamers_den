@@ -1,0 +1,6 @@
+<%= simple_form_for @game do |f| %>
+  <%= f.input :title  %>
+  <%= f.input :platform %>
+  <%= f.input :release_date, as: :date, html5: true %>
+  <%= f.button :submit, "Create Game"  %>
+<% end %>
