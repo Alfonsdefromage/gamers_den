@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    @game.cover_url = game_details.first['cover']['url'].gsub("//", "https://")
+    @game.cover_url = game_details.first['cover']['url'].gsub("//", "https://").gsub("t_thumb", "t_cover_big")
     @game.summary = game_details.first['summary']
     if @game.save
       redirect_to game_path(@game)

@@ -1,3 +1,7 @@
-<% @games.each do |game| %>
-  <%= image_tag game.cover_url, alt: "text" %>
-<% end %>
+<div class="container">
+  <div class="grid">
+    <% @games.each do |game| %>
+      <%= image_tag game.cover_url, alt: "#{game.title} cover", class: "cover-img" %>
+    <% end %>
+  </div>
+</div>
