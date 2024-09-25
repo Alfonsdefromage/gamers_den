@@ -1,0 +1,11 @@
+.sidebar-button {
+  color: $light-gray;
+  text-decoration: none;
+  padding: 16px;
+  z-index: +1;
+
+  &:hover {
+    background-color: $light-gray;
+    color: #333;
+  }
+}

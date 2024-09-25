@@ -1,8 +1,22 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: $darker-mode;
+  justify-content: space-around;
+  align-items: center;
+  background: $dark-gray;
   color: $light-gray;
   margin-bottom: 16px;
+}
+
+.dropdown-menu {
+  background-color: $dark-gray;
+}
+
+.dropdown-item {
+  color: $light-gray;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,5 +24,77 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
+  object-fit: cover;
+}
+
+.search-form-control {
+  position: relative;
+}
+
+.login-btn {
+  background-color: $green;
+  text-decoration: none;;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: $dark-gray;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $light-gray;
+    color: #333;
+  }
+}
+
+.search-btn {
+  position: absolute;
+  background-color: $green;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  border: none;
+  border-radius: 4px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+}
+
+.search-form-control .form-control {
+  height: 2rem;
+  width: 650px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color: $light-gray;
+  border: 1px solid #E7E7E7;
+  border-radius: 4px;
+}
+
+.search-form-control .form-control:focus {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color: #f4f4f4;
+}
+
+.fluid-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    padding-left: 16px;
+    margin: 0;
+  }
 }
