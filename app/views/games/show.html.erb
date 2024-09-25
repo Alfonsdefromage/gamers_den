@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="show-game">
+    <div class="game-cover">
+      <%= image_tag @game.cover_url, alt: "game cover" %>
+    </div>
+    <div class="game-info">
+      <h1><%= @game.title %></h1>
+      <p><%= @game.summary %></p>
+      <p><%= @game.release_date %></p>
+      <p><%= @game.platform %></p>
+      <p><%= @game.genre %></p>
+      <p><%= @game.developer %></p>
+      <p><%= @game.publisher %></p>
+    </div>
+  </div>
+</div>

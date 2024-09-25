@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <div class="profile">
+    <%= image_tag "test.JPG", alt: "text" %>
+    <div class="profile-details">
+      <div class="profile-row">
+        <h5><%= current_user.username %></h5>
+      </div>
+      <div class="profile-row">
+        <p>Owned: 0</p>
+        <p>Hunting: 0</p>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <%= link_to "Discover Games", games_path, class: "sidebar-button"  %>
+  </div>
+</div>
