@@ -3,6 +3,6 @@ class Game < ApplicationRecord
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :release_date }
-  validates :platform, presence: true
+  validates :platforms, presence: true
   validates :release_date, presence: true
 end

@@ -1,16 +1,20 @@
 <div class="container">
   <div class="show-game">
-    <div class="game-cover">
-      <%= image_tag @game.cover_url, alt: "game cover" %>
+    <h1><%= @game.title %></h1>
+    <div class="game-hero">
+      <%= image_tag @game.cover_url.gsub('t_cover_big', 't_1080p'), alt: "game cover" %>
+      <div class="game-details">
+        <p>Original Release Date: <%= @game.release_date %></p>
+        <p>Plattforms: <%= @game.platforms.join(", ") %></p>
+        <p>Genres: <%= @game.genre %></p>
+        <p>Developed by: <%= @game.developer %></p>
+        <p>Published by: <%= @game.publisher %></p>
+        <%= link_to "Add to your collection", new_game_bookmark_path(@game, 'add') %>
+        <%= button_to "Wishlist", game_bookmarks_path(@game, 'wishlist'), method: :post  %>
+      </div>
     </div>
     <div class="game-info">
-      <h1><%= @game.title %></h1>
       <p><%= @game.summary %></p>
-      <p><%= @game.release_date %></p>
-      <p><%= @game.platform %></p>
-      <p><%= @game.genre %></p>
-      <p><%= @game.developer %></p>
-      <p><%= @game.publisher %></p>
     </div>
   </div>
 </div>
