@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_20_152231) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_26_073907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,13 +22,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_20_152231) do
     t.bigint "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "platform"
     t.index ["game_id"], name: "index_bookmarks_on_game_id"
     t.index ["list_id"], name: "index_bookmarks_on_list_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.string "title"
-    t.string "platform"
     t.string "genre"
     t.string "publisher"
     t.string "developer"
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_20_152231) do
     t.text "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "platforms", default: [], array: true
   end
 
   create_table "lists", force: :cascade do |t|
