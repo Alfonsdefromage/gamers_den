@@ -1,0 +1,11 @@
+<div class="show-game">
+  <div class="game-list">
+    <h1><%= @list.name %></h1>
+    <% @list.games.each do |game| %>
+      <div class="game-details">
+        <%= image_tag game.cover_url, alt: "cover" %>
+        <h6><%= game.title %></h6>
+      </div>
+    <% end %>
+  </div>
+</div>
