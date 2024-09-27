@@ -47,3 +47,33 @@
   height: 100%;
   border-radius: 25px;
 }
+
+.game-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $dark-gray;
+  width: 100%;
+  border-radius: 16px;
+
+  h1 {
+    align-items: center !important;
+  }
+
+  img {
+    height: 120px;
+  }
+
+  .game-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px;
+    height: 100%;
+    border-radius: 25px;
+
+  }
+}
