@@ -1,0 +1,7 @@
+<div class="wishlist-item-form">
+  <%= simple_form_for @bookmark, html: { class: "wishlist-form" } do |f| %>
+    <%= f.input :platform, label: false, collection: @game.platforms, html: { class: "wishlist-input"} %>
+    <%= f.button :submit, "Add" %>
+  <% end %>
+  <%= link_to "X", "#"  %>
+</div>

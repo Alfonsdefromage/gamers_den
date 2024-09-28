@@ -49,20 +49,21 @@
 }
 
 .game-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: flex-start;
   background-color: $dark-gray;
   width: 100%;
   border-radius: 16px;
+  min-height: 100vh;
 
   h1 {
-    align-items: center !important;
+    text-align: center;
   }
 
   img {
-    height: 120px;
+    height: 80px;
   }
 
   .game-details {
@@ -74,6 +75,13 @@
     padding: 16px;
     height: 100%;
     border-radius: 25px;
+  }
 
+  .game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
   }
 }

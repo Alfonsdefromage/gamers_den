@@ -1,0 +1,20 @@
+.wishlist-item-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.wishlist-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.wishlist-input {
+  background-color: $light-gray;
+  width: 240px;
+}
