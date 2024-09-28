@@ -4,7 +4,10 @@
     <% @list.games.each do |game| %>
       <div class="game-details">
         <%= image_tag game.cover_url, alt: "cover" %>
-        <h6><%= game.title %></h6>
+        <div class="game-info" data-controller="replace-bought-button">
+          <h6><%= game.title %></h6>
+          <%= link_to "bought", replace_button_path(game_id: game.id, bookmark: @bookmarks.where(game: game)), data: { turbo_method: :post }, id: "replace-#{game.id}" %>
+        </div>
       </div>
     <% end %>
   </div>
