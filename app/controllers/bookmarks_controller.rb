@@ -44,6 +44,22 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def move_to_owned
+    @list = List.where(user: current_user).find_by(name: "Wishlist")
+    @bookmark = Bookmark.find(params[:bookmark])
+    @bookmark.owned = true
+    @bookmark.platform = params[:bookmark_params][:platform]
+    @game = Game.find(@bookmark.game_id)
+    if @bookmark.save
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.remove("game-#{@game.id}")}
+        format.html { redirect_to wishlist_path }
+      end
+    else
+      render :wishlist_path, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def bookmark_params

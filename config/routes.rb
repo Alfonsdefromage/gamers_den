@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   post 'replace_button', to: 'lists#replace_button', as: :replace_button
 
   resources :bookmarks, only: [:new, :create, :destroy]
-  post 'move_to_owned', to: 'bookmarks#move_to_owned', as: :move_to_owned
+  patch 'move_to_owned', to: 'bookmarks#move_to_owned', as: :move_to_owned
 end
