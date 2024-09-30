@@ -1,7 +1,7 @@
 <div class="wishlist-item-form">
-  <%= simple_form_for @bookmark, html: { class: "wishlist-form" } do |f| %>
-    <%= f.input :platform, label: false, collection: @game.platforms, html: { class: "wishlist-input"} %>
-    <%= f.button :submit, "Add" %>
+  <%= simple_form_for :bookmark_params, url: move_to_owned_path(bookmark: @bookmark, game: @game.id), method: :patch, html: { class: "wishlist-form" } do |f| %>
+    <%= f.input :platform, label: false, collection: @game.platforms, include_blank: false, input_html: { class: "wishlist-input" } %>
+    <%= f.button :submit, "Add", class: "add-btn"%>
   <% end %>
-  <%= link_to "X", "#"  %>
+  <%= link_to "", "#", class: "cancel" %>
 </div>

@@ -11,6 +11,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    @game.platforms = game_params[:platforms].split(',').map(&:strip)
     @game.cover_url = game_details.first['cover']['url'].gsub("//", "https://").gsub("t_thumb", "t_cover_big")
     @game.summary = game_details.first['summary']
     if @game.save
@@ -65,6 +66,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:title, :platform, :release_date)
+    params.require(:game).permit(:title, :platforms, :release_date)
   end
 end
