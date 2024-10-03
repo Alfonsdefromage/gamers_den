@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:new, :create, :show, :index]
 
-  resources :bookmarks, only: [:destroy]
+  resources :bookmarks, only: [:update, :destroy]
   post 'replace_button', to: 'bookmarks#replace_button', as: :replace_button
   get 'wishlist', to: 'bookmarks#wishlist_index', as: :wishlist
   patch 'move_to_owned', to: 'bookmarks#move_to_owned', as: :move_to_owned
