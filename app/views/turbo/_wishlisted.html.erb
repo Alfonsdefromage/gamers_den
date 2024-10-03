@@ -1,0 +1,7 @@
+<%= link_to wishlist_update_path(game), method: :patch, data: { turbo_method: :patch }, id: "wishlist-#{game.id}" do %>
+  <% if @bookmark.wishlist %>
+    <i class="fa-solid fa-star fa-lg" style="color: #FFD700"></i>  <!-- Filled star when wishlisted -->
+  <% else %>
+    <i class="fa-regular fa-star fa-lgr" style="color: #E6E6E6"></i> <!-- Empty star when not wishlisted -->
+  <% end %>
+<% end %>

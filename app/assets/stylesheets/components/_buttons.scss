@@ -63,12 +63,22 @@
   background-color: $green;
   color: $dark-gray;
   border-radius: 8px;
-  padding: 4px;
-  margin-top: 3px;
   text-decoration: none;
+  transition: 0.2s;
+  padding: 4px 8px;
 
   &:hover {
     background-color: $light-gray;
     color: $dark-gray;
   }
+}
+
+.wishlist-btn {
+  background-color: transparent;
+  color: $dark-gray;
+  border-radius: 8px;
+  padding: 0px 6px;
+  text-decoration: none;
+  border: none;
+  transition: 0.2s;
 }

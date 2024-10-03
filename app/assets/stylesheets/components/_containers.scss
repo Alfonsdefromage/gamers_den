@@ -45,9 +45,13 @@
   gap: 4px;
   background-color: $dark-gray;
   padding: 16px;
-  height: 100%;
   border-radius: 25px;
   width: 50%;
+  height: 360px;
+
+  h4 {
+    margin-bottom: 24px;
+  }
 }
 
 .game-list {
@@ -90,4 +94,13 @@
       margin-bottom: 24px;
     }
   }
+}
+
+.just-flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-right: -16px;
 }

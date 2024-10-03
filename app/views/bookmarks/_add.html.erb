@@ -1,1 +1,5 @@
-This is adding a new boorkmark
+<%= simple_form_for [@game, @bookmark] do |f| %>
+  <%= f.input :platform %>
+  <%= f.input :completed, as: :boolean, label: "Did you complete the game?" %>
+  <%= f.button :submit, "Add to your collection" %>
+<% end %>

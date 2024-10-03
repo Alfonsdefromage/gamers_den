@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :lists, dependent: :destroy
-  has_many :bookmarks, through: :lists
+  has_many :bookmarks
   has_many :games, through: :bookmarks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

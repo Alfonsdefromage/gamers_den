@@ -1,16 +1,32 @@
 <div class="container">
   <div class="show-game">
-    <h3><%= @game.title %></h3>
     <div class="game-hero">
       <%= image_tag @game.cover_url.gsub('t_cover_big', 't_1080p'), alt: "game cover" %>
       <div class="game-details">
-        <p>Original Release Date: <%= @game.release_date %></p>
-        <p>Plattforms: <%= @game.platforms.join(", ") %></p>
+        <h4><%= @game.title %></h4>
+        <p>Released on <%= @game.release_date %></p>
+        <p>For <%= @game.platforms.join(", ") %></p>
         <p>Genres: <%= @game.genre %></p>
         <p>Developed by: <%= @game.developer %></p>
         <p>Published by: <%= @game.publisher %></p>
-        <%= link_to "Add to your collection", new_game_bookmark_path(@game, 'add') %>
-        <%= button_to "Wishlist", game_bookmarks_path(@game, 'wishlist'), method: :post  %>
+        <div class="just-flex">
+          <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).owned == false %>
+            <%= link_to new_game_bookmark_path(@game, 'add') do %>
+              <i class="fa-regular fa-square-plus fa-xl" style="color: #A2D729"></i>
+            <% end %>
+          <% else %>
+            <%= link_to bookmark_path(@game.bookmark(current_user),game: @game), method: :delete, data: { turbo_method: :delete }, id: "bookmark-#{@game.id}" do %>
+              <i class="fa-solid fa-trash-can" style="color: #C1292E"></i>
+            <% end %>
+          <% end %>
+          <%= link_to wishlist_update_path(game: @game), method: :patch, data: { turbo_method: :patch}, id: "wishlist-#{@game.id}" do %>
+            <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).wishlist == false %>
+              <i class="fa-regular fa-star fa-lg" style="color: #E6E6E6"></i>
+            <% else %>
+              <i class="fa-solid fa-star fa-lg" style="color: #FFD700"></i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="game-info">
