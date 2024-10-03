@@ -1,5 +1,5 @@
-<% if @source == 'wishlist' %>
-  <%= render "wishlist" %>
+<% if @bookmark.id == nil %>
+  <%= render "add" %>
 <% else %>
-  <%= render 'add' %>
+  <%= render 'update' %>
 <% end %>

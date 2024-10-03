@@ -1,9 +1,8 @@
 <div class="show-game">
   <div class="game-list">
-    <h1><%= @list.name %></h1>
-    <% @list.games.each do |game| %>
-      <% bookmark = @bookmarks.find_by(game: game) %>
-      <% if bookmark.owned == false %>
+    <h1>Wishlist</h1>
+    <% current_user.games.each do |game| %>
+      <% if game.bookmark(current_user).wishlist == true %>
         <div class="game-details" id="game-<%=game.id%>">
           <%= image_tag game.cover_url, alt: "cover" %>
           <div class="game-info" data-controller="replace-bought-button">
