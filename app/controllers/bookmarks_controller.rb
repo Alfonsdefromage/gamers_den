@@ -34,6 +34,13 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.wishlist = false
+    @bookmark.update(bookmark_params)
+    redirect_to game_path(@bookmark.game)
+  end
+
   def move_to_owned
     @game = Game.find(params[:game])
     @bookmark = Bookmark.find_by(game: @game, user: current_user)
