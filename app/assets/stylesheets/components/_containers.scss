@@ -104,3 +104,20 @@
   width: 100%;
   margin-right: -16px;
 }
+
+.form-container {
+  background-color: $dark-gray;
+  color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 50vh;
+  width: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1), -10px -10px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+  border-radius: 16px;
+}
