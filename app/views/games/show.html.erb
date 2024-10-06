@@ -11,11 +11,11 @@
         <p>Published by: <%= @game.publisher %></p>
         <div class="just-flex">
           <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).owned == false %>
-            <%= link_to new_game_bookmark_path(@game, 'add') do %>
+            <%= link_to new_game_bookmark_path(game: @game, 'add') do %>
               <i class="fa-regular fa-square-plus fa-xl" style="color: #A2D729"></i>
             <% end %>
           <% else %>
-            <%= link_to new_game_bookmark_path(@game) do  %>
+            <%= link_to new_game_bookmark_path(game: @game) do  %>
               <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A2D729"></i>
             <% end %>
             <%= link_to bookmark_path(@game.bookmark(current_user),game: @game), method: :delete, data: { turbo_method: :delete }, id: "bookmark-#{@game.id}" do %>
