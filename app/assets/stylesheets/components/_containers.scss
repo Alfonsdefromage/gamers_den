@@ -130,4 +130,8 @@
 
 .form-input {
   background-color: $light-gray;
+
+  &:focus {
+    background-color: $light-gray;
+  }
 }

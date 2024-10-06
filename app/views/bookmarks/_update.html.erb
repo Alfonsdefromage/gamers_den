@@ -1,8 +1,9 @@
 <div class="form-container">
+  <%= image_tag @game.cover_url, alt: "game cover", class: "form-img" %>
   <h2>Update your Game</h2>
   <%= simple_form_for @bookmark, url: bookmark_path(@bookmark), method: :patch do |f| %>
-    <%= f.input :platform %>
-    <%= f.input :completed, as: :boolean, label: "Did you complete the game?" %>
+    <%= f.input :platform, input_html: { class: "form-input" } %>
+    <%= f.input :completed, as: :boolean, label: "Did you complete the game?", input_html: { class: "form-input" } %>
     <%= f.button :submit, "Add to your collection", class: "add-btn" %>
   <% end %>
 </div>
