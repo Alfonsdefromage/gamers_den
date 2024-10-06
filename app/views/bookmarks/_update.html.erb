@@ -1,7 +1,8 @@
 <div class="form-container">
+  <h2>Update your Game</h2>
   <%= simple_form_for @bookmark, url: bookmark_path(@bookmark), method: :patch do |f| %>
     <%= f.input :platform %>
     <%= f.input :completed, as: :boolean, label: "Did you complete the game?" %>
-    <%= f.button :submit, "Add to your collection" %>
+    <%= f.button :submit, "Add to your collection", class: "add-btn" %>
   <% end %>
 </div>
