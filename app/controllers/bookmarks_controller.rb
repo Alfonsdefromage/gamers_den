@@ -1,10 +1,10 @@
 class BookmarksController < ApplicationController
 
   def new
+    @game = Game.find(params[:game_id])
     if Bookmark.find_by(game: params[:game_id], user: current_user).nil?
       @bookmark = Bookmark.new
     else
-      @game = Game.find(params[:game_id])
       @bookmark = Bookmark.find_by(game: params[:game_id], user: current_user)
     end
   end
