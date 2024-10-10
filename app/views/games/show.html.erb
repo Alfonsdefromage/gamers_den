@@ -10,7 +10,7 @@
         <p>Developed by: <%= @game.developer %></p>
         <p>Published by: <%= @game.publisher %></p>
         <div class="just-flex">
-          <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).owned == false %>
+          <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).owned == false || @game.bookmark(current_user).platform == nil %>
             <%= link_to new_game_bookmark_path(@game) do %>
               <i class="fa-regular fa-square-plus fa-xl" style="color: #A2D729"></i>
             <% end %>
@@ -22,7 +22,7 @@
               <i class="fa-solid fa-trash-can fa-lg" style="color: #C1292E"></i>
             <% end %>
           <% end %>
-          <%= link_to wishlist_update_path(@game), method: :patch, data: { turbo_method: :patch}, id: "wishlist-#{@game.id}" do %>
+          <%= link_to wishlist_update_path(game: @game), method: :patch, data: { turbo_method: :patch}, id: "wishlist-#{@game.id}" do %>
             <% if @game.bookmark(current_user).nil? || @game.bookmark(current_user).wishlist == false %>
               <i class="fa-regular fa-star fa-lg" style="color: #E6E6E6"></i>
             <% else %>

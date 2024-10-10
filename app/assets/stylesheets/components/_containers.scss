@@ -139,3 +139,32 @@
 .simpler-form {
   width: 80%;
 }
+
+.list-index {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  // position: absolute;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // width: 50%;
+}
+
+.list-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-gray;
+  border-radius: 16px;
+  height: 160px;
+  width: 240px;
+
+  img {
+    height: 120px;
+    width: 230px;
+    object-fit: cover;
+  }
+}

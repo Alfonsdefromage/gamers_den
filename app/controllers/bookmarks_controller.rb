@@ -17,6 +17,7 @@ class BookmarksController < ApplicationController
     @bookmark.wishlist = false
     @bookmark.game = @game
     if @bookmark.save
+      create_list
       redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
@@ -38,6 +39,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.wishlist = false
     @bookmark.update(bookmark_params)
+    create_list
     redirect_to game_path(@bookmark.game)
   end
 
@@ -88,6 +90,12 @@ class BookmarksController < ApplicationController
   end
 
   private
+
+  def create_list
+    if List.find_by(user: current_user, name: @bookmark.platform).nil?
+      List.create(user: current_user, name: @bookmark.platform)
+    end
+  end
 
   def bookmark_params
     params.require(:bookmark).permit(:completed, :platform, :game_id)
