@@ -1,12 +1,14 @@
 <div class="container">
-  <div class="show-game">
+  <div class="lists">
     <div class="list-index">
       <% @lists.each do |list|  %>
-        <div class="list-card">
-          <%= image_tag "Logos/#{list.name}.png", alt: "text" %>
-          <h5><%= list.name %></h5>
-          <%= link_to "", list_path(list), class: "list-link" %>
-        </div>
+        <% if @bookmarks.where(platform: list.name).count > 0  %>
+          <div class="list-card">
+            <%= image_tag "Logos/#{list.name}.png", alt: "text" %>
+            <h5><%= list.name %></h5>
+            <%= link_to "", list_path(list), class: "list-link" %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -25,7 +25,9 @@
               <p><%= current_user.username %></p>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Discover Games", games_path, class: "dropdown-item" %>
+                <%= link_to "My Collection", lists_path, class: "dropdown-item" %>
                 <%= link_to "Wishlist", wishlist_path, class: "dropdown-item" %>
+                <%= link_to "Pile of Shame", pile_of_shame_path, class: "dropdown-item"  %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </div>

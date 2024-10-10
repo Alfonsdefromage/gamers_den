@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'wishlist', to: 'bookmarks#wishlist_index', as: :wishlist
   patch 'move_to_owned', to: 'bookmarks#move_to_owned', as: :move_to_owned
   patch "wishlist_update", to: "bookmarks#wishlist_update", as: :wishlist_update
+  get 'pile_of_shame', to: 'bookmarks#pile_of_shame', as: :pile_of_shame
 end
