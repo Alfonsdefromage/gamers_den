@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="game-show">
+    <div class="list-index">
+      <% @lists.each do |list|  %>
+        <div class="list-card">
+          <%= image_tag "Logos/#{list.name}.png", alt: "text" %>
+          <%= list.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
