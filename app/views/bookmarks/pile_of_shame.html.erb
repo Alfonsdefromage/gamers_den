@@ -1,8 +1,8 @@
 <div class="show-game">
   <div class="game-list">
-    <h1><%= @list.name %></h1>
+    <h1>Pile of Shame</h1>
     <% current_user.games.each do |game| %>
-      <% if game.bookmark(current_user).platform == @list.name %>
+      <% if game.bookmark(current_user).completed == false %>
         <div class="game-details" id="game-<%=game.id%>">
           <%= image_tag game.cover_url, alt: "cover" %>
           <div class="game-info" data-controller="replace-bought-button">

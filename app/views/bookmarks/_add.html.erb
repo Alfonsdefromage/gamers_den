@@ -3,7 +3,7 @@
   <h2>Add <span style="color: #F2AF29"><%= @game.title %></span><br>
     to your collection</h2>
   <%= simple_form_for [@game, @bookmark], html: { class: "simpler-form" } do |f| %>
-    <%= f.input :platform, input_html: { class: "form-input" } %>
+    <%= f.input :platform, collection: @game.platforms, include_blank: false, input_html: { class: "form-input" } %>
     <%= f.input :completed, as: :boolean, label: "Did you complete the game?", input_html: { class: "form-input" } %>
     <%= f.button :submit, "Add to your collection", class: "add-btn"%>
   <% end %>

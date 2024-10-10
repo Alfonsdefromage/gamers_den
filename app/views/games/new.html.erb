@@ -1,6 +1,8 @@
-<%= simple_form_for @game do |f| %>
-  <%= f.input :title  %>
-  <%= f.input :platforms %>
-  <%= f.input :release_date, as: :date, html5: true %>
-  <%= f.button :submit, "Create Game"  %>
-<% end %>
+<div class="form-container">
+  <%= simple_form_for @game, html: { class: "simpler-form" } do |f| %>
+    <%= f.input :title, input_html: { class: "form-input" }  %>
+    <%= f.input :platforms, input_html: { class: "form-input" } %>
+    <%= f.input :release_date, as: :date, html5: true, input_html: { class: "form-input" } %>
+    <%= f.button :submit, "Create Game", class: "add-btn" %>
+  <% end %>
+</div>
