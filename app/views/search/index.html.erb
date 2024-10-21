@@ -1,0 +1,14 @@
+<div class="show-game">
+  <div class="game-list">
+    <h1>Search results for <%= params[:query] %></h1>
+    <% @results.each do |game| %>
+      <div class="game-details" id="game-<%=game.id%>">
+        <%= image_tag game.cover_url, alt: "cover" %>
+        <div class="game-info" data-controller="replace-bought-button">
+          <h4><%= game.title %></h4>
+          <%= link_to "bought", replace_button_path(game_id: game.id, bookmark: @bookmarks.where(game: game)), data: { turbo_method: :post }, id: "replace-#{game.id}", class: "add-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
