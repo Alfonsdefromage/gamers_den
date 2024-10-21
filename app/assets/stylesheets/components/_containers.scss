@@ -193,3 +193,12 @@
     border-radius: 16px;
   }
 }
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+}

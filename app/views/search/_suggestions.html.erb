@@ -1,0 +1,9 @@
+<% if results.any? %>
+  <div class="search-box">
+    <% results.each do |game| %>
+      <div>
+        <%= link_to game.title, class: "" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

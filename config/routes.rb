@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
+  get 'search', to: 'search#index', as: :search_games
+  post 'search', to: 'search#index', as: :search
+  post 'search/suggestions', to: 'search#suggestions', as: :search_suggestions
+
   resources :games, only: [:new, :create, :show, :index] do
     resources :bookmarks, only: [:new, :create]
   end

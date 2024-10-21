@@ -1,4 +1,6 @@
 class Game < ApplicationRecord
+  searchkick text_middle: [:title, :summary]
+
   has_many :bookmarks
   has_many :users, through: :bookmarks
 
