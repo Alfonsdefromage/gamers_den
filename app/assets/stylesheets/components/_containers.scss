@@ -197,8 +197,28 @@
 .search-box {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $light-gray;
   z-index: 1;
+  text-decoration: none;
+
+  img {
+    height: 40px;
+    border-radius: 8px;
+  }
+
+}
+
+.search-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: $dark-gray;
+  padding: 8px;
+
+  p {
+    margin-left: 8px;
+  }
 }
