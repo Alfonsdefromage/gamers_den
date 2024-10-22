@@ -1,8 +1,9 @@
 <% if results.any? %>
   <div class="search-box">
     <% results.each do |game| %>
-      <div>
-        <%= link_to game.title, class: "" %>
+      <div class="search-items">
+        <%= image_tag game.cover_url, alt: "cover" %>
+        <p><strong><%= game.title %></strong> (<%= game.release_date.strftime("%Y") %>)</p>
       </div>
     <% end %>
   </div>

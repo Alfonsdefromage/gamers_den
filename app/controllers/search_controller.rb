@@ -18,10 +18,10 @@ class SearchController < ApplicationController
 
   def search_for_games
     @bookmarks = Bookmark.all.where(user: current_user)
-    if params[:query].blank?
+    if params[:search][:query].blank?
       Game.all
     else
-      @games = Game.where("title ILIKE ?", "%#{params[:query]}%")
+      @games = Game.where("title ILIKE ?", "%#{params[:search][:query]}%")
     end
   end
 end

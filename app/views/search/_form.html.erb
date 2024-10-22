@@ -1,15 +1,20 @@
-<%= form_with(url: search_games_path, method: :get, data: {
-  controller: "search",
-  action: "keyup->search#suggestions",
-  suggestions_url: search_suggestions_path,
-}) do |form| %>
+<%= simple_form_for :search, url: search_games_path, method: :get, html: {
+  data: {
+    controller: "search",
+    action: "keyup->search#suggestions",
+    suggestions_url: search_suggestions_path,
+  }
+} do |form| %>
   <div>
-    <%= form.text_field :query, data: {
-      search_target: "input",
-      action: "blur->search#hideSuggestions",
-    },
-    class: "",
-    placeholder: "Search games...", autocomplete: "off" %>
+    <%= form.input :query, input_html: {
+      data: {
+        search_target: "input",
+        action: "blur->search#hideSuggestions",
+      },
+      class: "",
+      placeholder: "Search games...",
+      autocomplete: "off"
+    }, label: false %>
     <div>
       <%= form.submit "Search", class: "search-btn" %>
     </div>
