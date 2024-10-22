@@ -46,7 +46,7 @@ export default class extends Controller {
   }
 
   childClicked(event) {
-    this.childWasClicked = this.element.contains(event.target)
+    this.childWasClicked = this.suggestionsTarget.contains(event.target);
   }
 
   showSuggestions() {
@@ -54,8 +54,10 @@ export default class extends Controller {
   }
 
   hideSuggestions() {
+    console.log("childWasClicked:", this.childWasClicked);  // Debugging log
+    console.log("hiding suggestions");  // Debugging log
     if (!this.childWasClicked) {
-    this.suggestionsTarget.classList.add("hidden");
+      this.suggestionsTarget.classList.add("hidden");
     }
     this.childWasClicked = false;
   }
