@@ -1,25 +1,25 @@
-<%= simple_form_for :search, url: search_games_path, method: :get, html: {
+<div data-controller="search">
+  <%= simple_form_for :search, url: search_games_path, method: :get, html: {
   data: {
     controller: "search",
     action: "keyup->search#suggestions",
     suggestions_url: search_suggestions_path,
   }
 } do |form| %>
-  <div>
-    <%= form.input :query, input_html: {
+    <div class="search-form-control form-group">
+      <%= form.input :query, input_html: {
       data: {
         search_target: "input",
         action: "blur->search#hideSuggestions",
       },
-      class: "",
+      class: "form-control",
       placeholder: "Search games...",
       autocomplete: "off"
     }, label: false %>
-    <div>
       <%= form.submit "Search", class: "search-btn" %>
     </div>
     <div id="suggestions" class="search-box" data-search-target="suggestions" data-action="mousedown->search#childClicked">
       <%= render partial: "search/suggestions", locals: { results: results } %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
