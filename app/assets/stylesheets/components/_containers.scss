@@ -132,6 +132,7 @@
 
 .form-input {
   background-color: $light-gray;
+  margin-bottom: 16px;
 
   &:focus {
     background-color: $light-gray;
@@ -223,8 +224,9 @@
   color: $dark-gray;
   padding: 8px;
   width: 650px;
+  position: relative;
 
-  p {
+  span {
     margin-left: 8px;
   }
 
