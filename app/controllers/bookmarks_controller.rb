@@ -36,6 +36,7 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
+    @bookmark.region = []
     @bookmark.wishlist = false
     @bookmark.update(bookmark_params)
     redirect_to game_path(@bookmark.game)
@@ -94,6 +95,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:completed, :platform, :game_id)
+    params.require(:bookmark).permit(:completed, :platform, :game_id, region: [])
   end
 end

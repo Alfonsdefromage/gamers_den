@@ -24,7 +24,7 @@
 .form-input {
   background-color: $light-gray;
   margin-bottom: 32px;
-  color: $dark-gray
+  color: $dark-gray;
 
   &:focus {
     background-color: $light-gray;
@@ -33,4 +33,15 @@
 
 .simpler-form {
   width: 80%;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+}
+
+.checkbox-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }

@@ -4,7 +4,14 @@
   <%= simple_form_for @bookmark, url: bookmark_path(@bookmark), method: :patch, html: { class: "simpler-form" } do |f| %>
     <%= f.input :platform, collection: @game.platforms, include_blank: false, input_html: { class: "form-input" } %>
     <%= f.input :completed, as: :boolean, label: "Did you complete the game?", input_html: { class: "form-input" } %>
-    <%= f.input :region, collection: ['PAL', 'NTSC', 'NTSC-J'], as: :radio_buttons, input_html: { class: "form-input radio-input" },  item_wrapper_class: "radio-inline", wrapper_html: { class: "radio-button-group" } %>
+    <div class="checkbox-group">
+      <% ['PAL', 'NTSC', 'NTSC-J'].each do |region| %>
+        <label class="checkbox-inline">
+          <%= f.check_box :region, { multiple: true, class: "form-input" }, region, nil %>
+          <%= region %>
+        </label>
+      <% end %>
+    </div>
     <%= f.button :submit, "Add to your collection", class: "add-btn" %>
   <% end %>
 </div>
