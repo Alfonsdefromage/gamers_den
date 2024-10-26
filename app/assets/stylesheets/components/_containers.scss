@@ -227,3 +227,34 @@
 .hidden {
   display: none;
 }
+
+.game-detailed-info {
+  display: flex;
+  flex-direction: column;
+  background-color: $light-gray;
+  color: $dark-gray;
+  border-radius: 25px;
+  padding: 16px;
+
+  p {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(33, 39, 56, 0.3);
+  }
+}
+
+.bookmark-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 25px;
+  background-color: $light-gray;
+  color: $dark-gray;
+
+  img {
+    height: 20px;
+    border-radius: 4px;
+  }
+}
