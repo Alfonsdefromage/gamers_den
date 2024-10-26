@@ -1,0 +1,36 @@
+/* Container for the radio buttons */
+.radio-button-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allows the radio buttons to wrap to the next line */
+  gap: 15px; /* Space between each radio button */
+}
+
+/* Styling each radio button wrapper */
+.radio-inline {
+  display: flex;
+  align-items: flex-start; /* Aligns the label with the button */
+}
+
+/* Space between radio button and label */
+.radio-inline input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radio-input {
+  margin-right: 5px; /* Adjust spacing between button and label */
+}
+
+.form-input {
+  background-color: $light-gray;
+  margin-bottom: 32px;
+  color: $dark-gray
+
+  &:focus {
+    background-color: $light-gray;
+  }
+}
+
+.simpler-form {
+  width: 80%;
+}
