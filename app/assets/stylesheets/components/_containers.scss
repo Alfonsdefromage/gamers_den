@@ -63,6 +63,7 @@
   width: 100%;
   border-radius: 16px;
   min-height: 100vh;
+  padding: 16px;
 
   h1 {
     text-align: center;
@@ -128,19 +129,6 @@
     margin-bottom: 2rem;
     text-align: center;
   }
-}
-
-.form-input {
-  background-color: $light-gray;
-  margin-bottom: 16px;
-
-  &:focus {
-    background-color: $light-gray;
-  }
-}
-
-.simpler-form {
-  width: 80%;
 }
 
 .list-index {
@@ -231,8 +219,8 @@
   }
 
   &:hover {
-    background-color: $dark-gray;
-    color: $light-gray;
+    background-color: $green;
+    color: $dark-gray;
   }
 }
 
