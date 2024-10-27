@@ -1,24 +1,46 @@
-/* Container for the radio buttons */
+.form-container {
+  background-color: $dark-gray;
+  color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 50vh;
+  width: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1), -10px -10px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 16px;
+  margin-bottom: 16px;
+
+  h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+
 .radio-button-group {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Allows the radio buttons to wrap to the next line */
-  gap: 15px; /* Space between each radio button */
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Styling each radio button wrapper */
 .radio-inline {
   display: flex;
-  align-items: flex-start; /* Aligns the label with the button */
+  align-items: flex-start;
 }
 
-/* Space between radio button and label */
 .radio-inline input[type="radio"] {
   margin-right: 5px;
 }
 
 .radio-input {
-  margin-right: 5px; /* Adjust spacing between button and label */
+  margin-right: 5px;
 }
 
 .form-input {

@@ -95,6 +95,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:completed, :platform, :game_id, region: [])
+    params.require(:bookmark).permit(:completed, :platform, :game_id, :notes, region: [])
   end
 end
