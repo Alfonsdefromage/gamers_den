@@ -34,12 +34,8 @@
     </div>
     <div class="game-detailed-info">
       <p><%= @game.summary %></p>
-      <div class="bookmark-info">
-        <%= render 'bookmarks/bookmark_details' %>
-      </div>
-      <div class="bookmark-info">
-        <%= render 'bookmarks/bookmark_notes' %>
-      </div>
+      <%= render 'bookmarks/bookmark_details' %>
+      <%= render 'bookmarks/bookmark_notes' %>
     </div>
   </div>
 </div>
