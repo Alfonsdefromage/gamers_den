@@ -13,6 +13,7 @@
         </label>
       <% end %>
     </div>
+    <%= f.input :notes, as: :text, input_html: { class: "form-input" } %>
     <%= f.button :submit, "Add to your collection", class: "add-btn"%>
   <% end %>
 </div>
