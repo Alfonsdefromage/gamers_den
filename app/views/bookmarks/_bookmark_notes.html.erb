@@ -1,0 +1,6 @@
+<% if @game.bookmark(current_user).notes != nil %>
+  <div class="flex-boy">
+    Notes:
+    <span><%= @game.bookmark(current_user).notes %></span>
+  </div>
+<% end %>
