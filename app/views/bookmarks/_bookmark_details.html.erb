@@ -1,29 +1,31 @@
-      <% if @game.bookmark(current_user).nil? %>
-  <p>Not in your library</p>
+<% if @game.bookmark(current_user).nil? %>
+  Not in your library
 <% else %>
-  <div class="flex-boy">
-    Added to your library on <span><%= @game.bookmark(current_user).created_at.strftime("%B %d, %Y") %> </span>
+  <div class="bookmark-info">
+    <div class="flex-boy">
+      Added to your library on <span><%= @game.bookmark(current_user).created_at.strftime("%B %d, %Y") %> </span>
+    </div>
+    <div class="flex-boy">
+      Platform:
+      <span><%= @game.bookmark(current_user).platform %></span>
+    </div>
+    <div class="flex-boy">
+      Region:
+      <span><% if @game.bookmark(current_user).region.include?('PAL') %>
+          <%= image_tag 'regions/pal.png', alt: "european flag" %>
+        <% else %>
+          <%= image_tag 'regions/pal.png', alt: "european flag", class: "opacity-low" %>
+        <% end %>
+        <% if @game.bookmark(current_user).region.include?('NTSC-J') %>
+          <%= image_tag 'regions/ntsc-j.png', alt: "japanese flag" %>
+        <% else %>
+          <%= image_tag 'regions/ntsc-j.png', alt: "japanese flag", class: "opacity-low" %>
+        <% end %>
+        <% if @game.bookmark(current_user).region.include?('NTSC') %>
+          <%= image_tag 'regions/ntsc.png', alt: "american flag" %>
+        <% else %>
+          <%= image_tag 'regions/ntsc.png', alt: "american flag", class: "opacity-low" %>
+        <% end %></span>
+    </div>
   </div>
-  <div class="flex-boy">
-    Platform:
-    <span><%= @game.bookmark(current_user).platform %></span>
-  </div>
-  <div class="flex-boy">
-    Region:
-    <span><% if @game.bookmark(current_user).region.include?('PAL') %>
-        <%= image_tag 'regions/pal.png', alt: "european flag" %>
-      <% else %>
-        <%= image_tag 'regions/pal.png', alt: "european flag", class: "opacity-low" %>
-      <% end %>
-      <% if @game.bookmark(current_user).region.include?('NTSC-J') %>
-        <%= image_tag 'regions/ntsc-j.png', alt: "japanese flag" %>
-      <% else %>
-        <%= image_tag 'regions/ntsc-j.png', alt: "japanese flag", class: "opacity-low" %>
-      <% end %>
-      <% if @game.bookmark(current_user).region.include?('NTSC') %>
-        <%= image_tag 'regions/ntsc.png', alt: "american flag" %>
-      <% else %>
-        <%= image_tag 'regions/ntsc.png', alt: "american flag", class: "opacity-low" %>
-      <% end %>
-    <% end %></span>
-</div>
+<% end %>
