@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:new, :create, :show, :index] do
     resources :bookmarks, only: [:new, :create]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :lists, only: [:new, :create, :show, :index]

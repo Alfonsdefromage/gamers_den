@@ -253,6 +253,10 @@
   align-items: flex-start;
 }
 
-.region-flags {
-  margin-top: -24px;
+.card {
+  background-color: inherit;
+
+  .form-input {
+    border: 1px solid rgba(33, 39, 56, 0.3);
+  }
 }
