@@ -1,0 +1,12 @@
+<div>
+  <% @game.reviews.each do |review| %>
+    <div class="review">
+      <div class="review-rating">
+        <%= review.rating %>
+      </div>
+      <div class="review-content">
+        <%= review.content %>
+      </div>
+    </div>
+  <% end %>
+</div>

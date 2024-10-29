@@ -1,0 +1,5 @@
+<%= simple_form_for [@game, @review], data: { action: 'submit->insert-review#create', insert_review_target: 'form' } do |f| %>
+  <%= f.input :rating, collection: 1..10, input_html: { class: "form-input" } %>
+  <%= f.input :content, input_html: { class: "form-input" } %>
+  <%= f.submit 'Submit', class: 'btn btn-info mt-2' %>
+<% end %>
