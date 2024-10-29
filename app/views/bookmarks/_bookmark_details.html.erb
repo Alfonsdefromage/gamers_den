@@ -3,15 +3,20 @@
 <% else %>
   <div class="bookmark-info">
     <div class="flex-boy">
-      Added to your library on <span><%= @game.bookmark(current_user).created_at.strftime("%B %d, %Y") %> </span>
+      Added to your library on <br>
+      <%= @game.bookmark(current_user).created_at.strftime("%B %d, %Y") %>
     </div>
     <div class="flex-boy">
       Platform:
-      <span><%= @game.bookmark(current_user).platform %></span>
+      <br>
+      <%= @game.bookmark(current_user).platform %>
     </div>
-    <div class="flex-boy">
-      Region:
-      <span><% if @game.bookmark(current_user).region.include?('PAL') %>
+    <div class="flex-column">
+      <div>
+        Region:
+      </div>
+      <div>
+        <% if @game.bookmark(current_user).region.include?('PAL') %>
           <%= image_tag 'regions/pal.png', alt: "european flag" %>
         <% else %>
           <%= image_tag 'regions/pal.png', alt: "european flag", class: "opacity-low" %>
@@ -25,7 +30,8 @@
           <%= image_tag 'regions/ntsc.png', alt: "american flag" %>
         <% else %>
           <%= image_tag 'regions/ntsc.png', alt: "american flag", class: "opacity-low" %>
-        <% end %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
