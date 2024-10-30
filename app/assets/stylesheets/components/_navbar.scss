@@ -47,21 +47,6 @@
   }
 }
 
-.search-btn {
-  position: absolute;
-  background-color: $green;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-  border: none;
-  border-radius: 4px;
-  transition: 0.2s;
-
-  &:hover {
-    background-color: $light-gray;
-  }
-}
-
 .search-form-control .form-control {
   height: 2rem;
   width: 650px;

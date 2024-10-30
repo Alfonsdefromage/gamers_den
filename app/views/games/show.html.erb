@@ -37,17 +37,7 @@
       <%= render 'bookmarks/bookmark_details' %>
       <%= render 'bookmarks/bookmark_notes' %>
       <%= render 'reviews/display' %>
-      <button class="btn btn-info" type="button" data-insert-review-target='btn' data-bs-toggle="collapse" data-bs-target="#reviewCreate" aria-expanded="false" aria-controls="reviewCreate">
-        Add a Review
-      </button>
-      <div class="collapse" id="reviewCreate">
-        <div class="card card-body">
-          <!-- <form action="" data-action="submit->insert-review#create" data-insert-review-target='form'>
-        </form>
-        -->
-          <%= render 'reviews/form' %>
-        </div>
-      </div>
+      <%= render 'reviews/form' %>
     </div>
   </div>
 </div>
