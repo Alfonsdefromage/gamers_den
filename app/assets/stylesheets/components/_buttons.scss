@@ -91,3 +91,44 @@
   bottom: 0;
   width: 100%;
 }
+
+.search-btn {
+  position: absolute;
+  background-color: $yellow;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  border: none;
+  border-radius: 4px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+}
+
+.add-review-btn {
+  background-color: $yellow;
+  width: 100%;
+  color: $dark-gray;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $light-gray;
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
+  }
+
+  .clicked {
+    background-color: $light-gray;
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  }
