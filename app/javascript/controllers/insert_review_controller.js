@@ -22,4 +22,9 @@ export default class extends Controller {
         this.btnTarget.click();
       });
   }
+
+  toggle(event) {
+    event.preventDefault();
+    this.btnTarget.classList.toggle("clicked");
+  }
 }

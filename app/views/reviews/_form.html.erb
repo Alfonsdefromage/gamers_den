@@ -1,5 +1,5 @@
     <% if @game.bookmark(current_user).present? %>
-  <button class="add-review-btn" type="button" data-insert-review-target='btn' data-bs-toggle="collapse" data-bs-target="#reviewCreate" aria-expanded="false" aria-controls="reviewCreate">
+  <button class="add-review-btn" type="button" data-controller="insert-review" data-insert-review-target='btn' data-action="insert-review#toggle" data-bs-toggle="collapse" data-bs-target="#reviewCreate" aria-expanded="false" aria-controls="reviewCreate">
     Add a Review
   </button>
   <div class="collapse" id="reviewCreate">
@@ -7,7 +7,7 @@
       <%= simple_form_for [@game, @review], data: { action: 'submit->insert-review#create', insert_review_target: 'form' } do |f| %>
         <%= f.input :rating, collection: 1..10, input_html: { class: "form-input" } %>
         <%= f.input :content, input_html: { class: "form-input" } %>
-        <%= f.submit 'Submit', class: 'btn btn-info mt-2' %>
+        <%= f.submit 'Submit', class: 'review-btn' %>
       <% end %>
     <% end %>
   </div>

@@ -120,15 +120,31 @@
 
   &:hover {
     background-color: $light-gray;
-    border: 1px solid $dark-gray;
+    border: 1px solid rgba(33, 39, 56, 0.3);
     color: $dark-gray;
+  }
   }
 
   .clicked {
-    background-color: $light-gray;
-    border: 1px solid $dark-gray;
+    border: 1px solid rgba(33, 39, 56, 0.1);
     color: $dark-gray;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  }
+
+  .review-btn {
+    background-color: $yellow;
+    color: $dark-gray;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 8px;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $light-gray;
+      border: 1px solid rgba(33, 39, 56, 0.3);
+      color: $dark-gray;
+    }
+    }
