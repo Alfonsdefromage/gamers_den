@@ -7,6 +7,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    authorize @game
   end
 
   def create
@@ -14,6 +15,7 @@ class GamesController < ApplicationController
     @game.platforms = game_params[:platforms].split(',').map(&:strip)
     @game.cover_url = game_details.first['cover']['url'].gsub("//", "https://").gsub("t_thumb", "t_cover_big")
     @game.summary = game_details.first['summary']
+    authorize @game
     if @game.save
       redirect_to game_path(@game)
     else
@@ -31,6 +33,10 @@ class GamesController < ApplicationController
   end
 
   private
+
+  def authorize_game
+    authorize(Game)
+  end
 
   def game_details
     client_id = ENV.fetch('CLIENT_ID')
