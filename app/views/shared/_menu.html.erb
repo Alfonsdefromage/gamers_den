@@ -20,8 +20,9 @@
           </a>
           <p></p>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <div>
+            <div class="user-info">
               <%= current_user.username %>
+              <br>
               <%= current_user.email %>
             </div>
             <%= link_to "My Collection", lists_path, class: "dropdown-item" %>
