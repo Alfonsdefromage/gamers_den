@@ -1,0 +1,21 @@
+@media screen and (max-width: 1080px) {
+  /* Your custom styles for screens below 1080px */
+  .game-hero {
+    flex-direction: column;
+    gap: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 25px;
+    }
+  }
+
+  .game-details {
+    width: 100%;
+  }
+
+  #search-form {
+    display: none;
+  }
+}
