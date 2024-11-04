@@ -79,3 +79,4 @@ end
 # custom gems
 gem "searchkick"
 gem "elasticsearch"
+gem "pundit"
