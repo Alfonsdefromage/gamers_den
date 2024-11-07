@@ -237,7 +237,7 @@
 
   img {
     height: 20px;
-    width: 30px;git
+    width: 30px;
     border-radius: 4px;
   }
 }
@@ -283,4 +283,27 @@
     height: 40px;
     border-radius: 8px;
   }
+}
+
+.rootpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    color: $light-gray;
+    gap: 16px;
+    background-color: $dark-gray;
+    padding: 16px;
+    border-radius: 25px;
+    min-height: 75vh;
+
+    img {
+      border-radius: 8px;
+      height: 360px;
+    }
 }
