@@ -287,8 +287,8 @@
 
 .rootpage {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 16px;
     position: absolute;
@@ -300,10 +300,67 @@
     background-color: $dark-gray;
     padding: 16px;
     border-radius: 25px;
-    min-height: 75vh;
+    padding: 32px;
 
     img {
       border-radius: 8px;
       height: 360px;
     }
+}
+
+.rootpage-stats {
+  border: 1px solid $light-gray;
+  border-radius: 25px;
+  height: 50vh;
+  width: 50%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $light-gray;
+  color: $dark-gray;
+
+  .stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 25px;
+    margin-right: 16px;
+  }
+}
+
+.rootpage-last {
+  border: 1px solid $light-gray;
+  border-radius: 25px;
+  height: 50vh;
+  width: 50%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $light-gray;
+  color: $dark-gray;
+
+  img {
+    object-fit: cover;
+    height: 180px;
+    border-radius: 25px;
+  }
 }

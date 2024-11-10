@@ -1,5 +1,30 @@
 <div class="container">
   <div class="rootpage">
-    hi
+    <div class="rootpage-stats">
+      <div class="stats">
+        <div>
+          <%= image_tag "placeholder.png", alt: "text" %>
+        </div>
+        <div>
+          <h3><%= current_user.username %></h3>
+          <p> <%= current_user.created_at.strftime("Joined on %m/%d/%Y")  %></p>
+          <p> Games in total: <%= current_user.bookmarks.where(owned: true).count %></p>
+        </div>
+      </div>
+      <div class="buttons">
+        <%= link_to "My Collection", lists_path, class: "stats-btn"  %>
+        <%= link_to "Browse Games", games_path, class: "stats-btn"  %>
+        <%= link_to "Pile of Shame", pile_of_shame_path, class: "stats-btn"  %>
+        <%= link_to "Wishlist", wishlist_path, class: "stats-btn"  %>
+      </div>
+    </div>
+    <div class="rootpage-last">
+      <h3>Last added game...</h4>
+      <% if current_user.bookmarks.where(owned: true) %>
+        <%= image_tag current_user.bookmarks.where(owned: true).last.game.cover_url, alt: "cover" %>
+        <h4><%= current_user.bookmarks.where(owned: true).last.game.title %></h4>
+        <p><%= current_user.bookmarks.where(owned: true).last.created_at.strftime("Added on %m/%d/%Y")  %></p>
+      <% end %>
+    </div>
   </div>
 </div>
