@@ -148,3 +148,19 @@
       color: $dark-gray;
     }
     }
+
+    .stats-btn {
+      background-color: $dark-gray;
+      color: $light-gray;
+      padding: 4px 8px;
+      width: 40%;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 1px solid rgba(33, 39, 56, 0.3);
+
+      &:hover {
+        background-color: $light-gray;
+        color: $dark-gray;
+      }
+    }
