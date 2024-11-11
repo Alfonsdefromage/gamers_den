@@ -164,3 +164,21 @@
         color: $dark-gray;
       }
     }
+
+    .join-btn {
+      background-color: #F2AF29;
+      border: solid 1px #333;
+      color: #333;
+      border-radius: 50px;
+      transition: 0.2s;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: x-large;
+      text-decoration: none;
+      margin-bottom: 16px;
+
+      &:hover {
+        background-color: $light-gray;
+        color: $dark-gray;
+      }
+    }
