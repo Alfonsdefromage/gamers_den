@@ -405,3 +405,31 @@
     }
   }
 }
+
+.features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $ash;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 25px;
+  height: 250px;
+  width: 100%;
+
+  .feature {
+    width: 25%;
+    text-align: center;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    p {
+      color: $dark-mode;
+    }
+  }
+}
