@@ -145,7 +145,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $light-gray;
+  background-color: $background-gray;
   border-radius: 16px;
   height: 160px;
   width: 240px;
@@ -165,7 +165,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: $light-gray;
+  background-color: $background-gray;
   z-index: 1;
   position: absolute;
   top: 20px;
@@ -208,7 +208,7 @@
 .game-detailed-info {
   display: flex;
   flex-direction: column;
-  background-color: $light-gray;
+  background-color: $background-gray;
   color: $dark-gray;
   border-radius: 25px;
   padding: 16px;
@@ -232,7 +232,7 @@
   gap: 16px;
   padding: 16px;
   border-radius: 25px;
-  background-color: $light-gray;
+  background-color: $background-gray;
   color: $dark-gray;
 
   img {
@@ -317,7 +317,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: $light-gray;
+  background-color: $background-gray;
   color: $dark-gray;
 
   .stats {
@@ -355,7 +355,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: $light-gray;
+  background-color: $background-gray;
   color: $dark-gray;
 
   img {
@@ -411,7 +411,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $ash;
+  background-color: $background-gray;
   padding: 16px;
   margin-top: 16px;
   border-radius: 25px;
