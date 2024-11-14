@@ -1,14 +1,12 @@
-<div>
-  <% @game.reviews.each do |review| %>
-    <div class="review">
-      <%= image_tag "placeholder.png", class: "avatar-square", alt: "dropdown menu" %> <!-- to be replaced with user image when web host is decided -->
-      <%= review.user.username %>
-      <div class="review-rating">
-        <%= review.rating.round(0) %> / 10
-      </div>
-      <div class="review-content">
-        <%= review.content %>
-      </div>
+<% @game.reviews.each do |review| %>
+  <div class="review">
+    <%= image_tag "placeholder.png", class: "avatar-square", alt: "dropdown menu" %> <!-- to be replaced with user image when web host is decided -->
+    <%= review.user.username %>
+    <div class="review-rating">
+      <%= review.rating.round(0) %> / 10
     </div>
-  <% end %>
-</div>
+    <div class="review-content">
+      <%= review.content %>
+    </div>
+  </div>
+<% end %>
